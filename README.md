@@ -4,7 +4,7 @@
 ##### Note: Use CTRL+click (on Windows and Linux) or CMD+click (on MacOS) for opening all the links in new tab.
 <br>
 
-This is a Proof of Concept (POC) for [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent/) for GSoC'24. This is a public repo, it does not contain any firebase functionlity in it. Please follow these instructions to add your own firebase project.
+This is a Proof of Concept (POC) for [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent/) for GSoC'24. This is a public repo, it does not contain any firebase functionality in it. Please follow [these](#prerequisites) instructions to add your own firebase project.
 
 
 ## Steps to add your Firebase project in this project.
