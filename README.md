@@ -65,6 +65,47 @@ service cloud.firestore {
 - Paste it in lib/secret.dart at `<paste your own key from firebase cloud messaging>`.
 - All done.
 
+### Set up Cloud Messaging for iOS (Important) - needs Apple developer account:
+- Navigate to the Apple [developer](https://developer.apple.com/account/resources/authkeys/list) page, and click Create a key on the Keys tab.
+![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/7f5ae39d-a18e-4a26-a49e-40c73351e778)
+
+
+- Enter the name for the key and check Apple Push Notifications services (APNs).
+  ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/ea076b26-5e3c-4c4c-ade9-0dd87ce4979e)
+
+- Download the key file, which has a .p8 file extension. Take note of Key Id & Team ID (At the top rigth corner):
+  ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/9ce9f7f6-33f0-4f85-afab-cd179502198a)
+  <img width="463" alt="Screenshot 2024-03-18 at 5 09 29 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/692d9e18-5eb2-43e6-8eeb-92646589120a">
+
+  
+
+- In the Firebase console, navigate to the project's Project Settings and choose the Cloud Messaging tab.
+![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b4aa3680-b4cf-4264-a38a-936fbbd8a881)
+
+![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/a4111f52-3dc6-4aa4-859f-9f1e94e936ce)
+
+
+- Upload the APNs key file for the iOS app in the Cloud Messaging tab.
+- Enter the `APNs key ID` from the Cloud Messaging tab and the `team ID`, which can be found at the top right corner in the Apple membership center.
+  ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/3086390e-a049-4527-98ac-7d197e2f08b9)
+
+### iOS Signing & Capabilites:
+- Again open the project in Xcode.
+- Click on `Runner` -> `Signing & Capabilites` -> `+ Capability` <img width="788" alt="Screenshot 2024-03-18 at 5 18 16 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/0c36e067-298e-466d-804d-58dfcf5b79d9">
+- Click on Push Notifications.
+
+
+- Enter Push Notifications inside the Capabilties search:<img alt="" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/d97544a5-b142-4b73-89c4-0dc588c1a240">
+- Now Search for "Background Modes":
+- ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/99312095-6070-48ca-a8f8-1945eb7cd8aa)
+- Click on Background modes.
+- Now ensure that both the "Background fetch" and the "Remote notifications" sub-modes are enabled:
+- ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b2419f8f-4727-4129-80ae-0552b147c481)
+
+
+
+  
+
 
 
 
