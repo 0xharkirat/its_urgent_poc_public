@@ -4,7 +4,11 @@
 ##### Note: Use CTRL+click (on Windows and Linux) or CMD+click (on MacOS) for opening all the links in new tab.
 <br>
 
-This is a Proof of Concept (POC) for [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent/) for GSoC'24. This is a public repo, it does not contain any firebase functionality in it. Please follow [these](#prerequisites) instructions to add your own firebase project.
+This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent) for GSoC'24. 
+- This public repo is clone of my private repo which contains all the firebase secrets, apis & files.
+- This is a public repo, it does not contain any firebase functionlity. 
+- You need to add firebase project by following [these](#prerequisites) simple instructions which only requires some clicks, copy & paste.
+- For more important notes regarding this poc, see this [section](#some-important-notes).
 
 
 ## Steps to add your Firebase project in this project.
@@ -14,20 +18,28 @@ This is a Proof of Concept (POC) for [It's Urgent Project](https://ccextractor.o
 3. `cd <this repo>`.
 4. Open in the Terminal/Android Studio/VS Code.
 5. Install all plugins using: `flutter pub get` in the root folder of the project.
-6. Go to https://console.firebase.google.com/ to create a Firebase account.
-6. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
+6. For iOS only (Important for getting firebase notifications):
+   - Right click on iOS folder -> Open in Xcode -> Runner -> Signing & Capabilities -> Enter some unique Bundle Identifier (like com.<your_unique_name>.<unique_appName> & press enter to check availability.
+   - Then again in VSCode or your editor go to ios/Runner/Info.plist.
+   - Change the CFBundleIdentifier to your own unique identifier like I did:
+   - <img width="463" alt="Screenshot 2024-03-18 at 4 55 53 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b8a2db93-ee05-41aa-aa75-8df2111b83e6">
 
-### Firebase
+   
+8. Go to https://console.firebase.google.com/ to create a Firebase account.
+9. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
+10. 
+
+### Firebase:
 - Follow [these steps](https://firebase.google.com/docs/flutter/setup?platform=web) to add Firebase to this project.
 - or, watch this [YouTube Video](https://www.youtube.com/watch?v=FkFvQ0SaT1I&t).
 
-#### Firebase Authentication
+### Firebase Authentication:
 - Go to Firebase [console](https://console.firebase.google.com/) -> Click on your Project which you added to this flutter app.
-- On the left side menu, click Build -> Authentication -> Get Started -> Sign-in method tab -> Anonymous -> Enable (switch on) -> Save.
+- On the left side menu, click `Build` -> `Authentication` -> `Get Started` -> `Sign-in method` tab -> `Anonymous` -> `Enable` (switch on) -> `Save`.
 
-#### Firebase Cloud Firestore
-- On the left side menu, click Build -> Firestore Database -> Create Database -> Next & Create (With default options).
-- Once created, Select Rules tab -> Paste these rules:
+### Firebase Cloud Firestore:
+- On the left side menu, click `Build` -> `Firestore Database` -> `Create Database` -> `Next` & `Create` (With default options).
+- Once created, Select `Rules tab` -> Paste these rules:
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -39,4 +51,33 @@ service cloud.firestore {
   }
 }
 ```
-- Publish.
+- `Publish`.
+
+
+### Firebase Cloud Messaging (FCM):
+- Click on Settings Icons next to `Project Overview` in the left side menu.
+- Click on `Project Settings` -> `Cloud Messaging tab`.
+- Click on `⋮` (three dots) next to `Cloud Messaging API (Legacy) Disabled`.
+- Click on `Manage Api in Google Cloud Console`. It will redirect to Google cloud console page.
+- Check your project name at the top and then click `enable`.
+- Once enabled, come back to the Firebase console to see whether it is enabled.
+- Now copy the `Server key`. 
+- Paste it in lib/secret.dart at `<paste your own key from firebase cloud messaging>`.
+- All done.
+
+
+
+
+Now you can connect physical device or simulator to run using `flutter run`.
+If you have multiple devices connected, it will ask you to select one device.
+iOS simulators have problem showing notifications from Firebase, use physical iOS devices instead.
+
+#### Some Important notes:
+- This project uses Kotlin 1.8.0, which is required for app_settings plugin.
+`id "org.jetbrains.kotlin.android" version "1.8.0" apply false` in your android/settings.gradle 
+- In this poc, Notifications only shows when app is in the background mode.
+- For the foreground mode, it requires extra functionality which I will implement using the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) or [awesome_notifications](https://pub.dev/packages/awesome_notifications) package during my GSoC period.
+- It also does not check for device's DND mode. Full functionality during GSoC period.
+- It is currently using Cloud Messaging API (Legacy) for sending notifications, which is deprecated, I will use Firebase Cloud Messaging API (V1) which is recommended in the full project during my GSoC period.
+- It does not uses any other backend server, cloud functions to handle complex logics such as checking for dnd mode, notifying the sender about challenges etc. as required & mentioned in project page. All functionality will be implemented using Firebase cloud functions, which will also act as security layer for cloud firestore db.
+- Currently Phone numbers are stored as plain numbers, I will implement functionality to store phone number data in encrypted mode using cloud functions.
