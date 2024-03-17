@@ -10,6 +10,9 @@ This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.
 - This is a public repo, it does not contain any firebase functionlity. 
 - You need to add firebase project by following [these](#prerequisites) simple instructions which only requires some clicks, copy & paste.
 - For more important notes regarding this poc, see this [section](#some-important-notes).
+- You can also learn from these codelabs
+   - [Firebase FCM Flutter](https://firebase.google.com/codelabs/firebase-fcm-flutter#0)
+   - [Get to know Firebase for Flutter](https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0)
 
 
 ## Steps to add your Firebase project in this project.
