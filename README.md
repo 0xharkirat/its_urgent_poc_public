@@ -1,16 +1,6 @@
-# its_urgent_poc
+# It's Urgent POC
+![Static Badge](https://img.shields.io/badge/GSoC'24-8A2BE2)
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is a Proof of Concept (POC) for 
+<a href="https://ccextractor.org/public/gsoc/2024/itsurgent/" target="_blank">It's Urgent Project</a>  for GSoC'24. This is a public repo, it does not contain any firebase functionlity in it. Please follow these instructions to add your own firebase project.
