@@ -1,5 +1,5 @@
 # It's Urgent POC
-![Static Badge](https://img.shields.io/badge/GSoC'24-8A2BE2)
+![Static Badge](https://img.shields.io/badge/GSoC'24-8A2BE2) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?s&logo=Flutter&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-a08021?&logo=firebase&logoColor=ffcd34)
 
 ##### Note: Use CTRL+click (on Windows and Linux) or CMD+click (on MacOS) for opening all the links in new tab. 
 Please open issues if anything goes wrong, I am happy to assist & resolve.
