@@ -1,7 +1,8 @@
 # It's Urgent POC
 ![Static Badge](https://img.shields.io/badge/GSoC'24-8A2BE2)
 
-##### Note: Use CTRL+click (on Windows and Linux) or CMD+click (on MacOS) for opening all the links in new tab.
+##### Note: Use CTRL+click (on Windows and Linux) or CMD+click (on MacOS) for opening all the links in new tab. 
+Please open issues if anything goes wrong, I am happy to assist & resolve.
 <br>
 
 This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent) for GSoC'24. 
@@ -97,21 +98,22 @@ service cloud.firestore {
 
 - Enter Push Notifications inside the Capabilties search:<img alt="" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/d97544a5-b142-4b73-89c4-0dc588c1a240">
 - Now Search for "Background Modes":
-- ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/99312095-6070-48ca-a8f8-1945eb7cd8aa)
+  ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/99312095-6070-48ca-a8f8-1945eb7cd8aa)
 - Click on Background modes.
 - Now ensure that both the "Background fetch" and the "Remote notifications" sub-modes are enabled:
-- ![image](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b2419f8f-4727-4129-80ae-0552b147c481)
 
 
 
-  
+![ezgif com-avif-to-gif-converter](https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/9e8809b2-324d-46f9-84ae-011e5d409ac8)
+
+- All Done.
 
 
 
-
-Now you can connect physical device or simulator to run using `flutter run`.
-If you have multiple devices connected, it will ask you to select one device.
-iOS simulators have problem showing notifications from Firebase, use physical iOS devices instead.
+### Run App
+- Now you can connect physical device or simulator to run using `flutter run`.
+- If you have multiple devices connected, it will ask you to select one device.
+- iOS simulators have problem showing notifications from Firebase, use physical iOS devices instead.
 
 #### Some Important notes:
 - This project uses Kotlin 1.8.0, which is required for app_settings plugin.
