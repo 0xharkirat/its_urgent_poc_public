@@ -20,3 +20,23 @@ This is a Proof of Concept (POC) for [It's Urgent Project](https://ccextractor.o
 ### Firebase
 - Follow [these steps](https://firebase.google.com/docs/flutter/setup?platform=web) to add Firebase to this project.
 - or, watch this [YouTube Video](https://www.youtube.com/watch?v=FkFvQ0SaT1I&t).
+
+#### Firebase Authentication
+- Go to Firebase [console](https://console.firebase.google.com/) -> Click on your Project which you added to this flutter app.
+- On the left side menu, click Build -> Authentication -> Get Started -> Sign-in method tab -> Anonymous -> Enable (switch on) -> Save.
+
+#### Firebase Cloud Firestore
+- On the left side menu, click Build -> Firestore Database -> Create Database -> Next & Create (With default options).
+- Once created, Select Rules tab -> Paste these rules:
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // auth
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
+- Publish.
