@@ -6,7 +6,8 @@ Please open issues if anything goes wrong, I am happy to assist & resolve.
 <br>
 
 This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent) for GSoC'24. 
-- Watch the working Demo Video here: https://youtu.be/__nhs4On2zI (1.5x speed recommended)
+- Watch the working Demo Video here: https://youtu.be/__nhs4On2zI (1.5x speed recommended).
+- Download this Android [.apk](https://github.com/0xharkirat/its_urgent_poc_public/releases/download/beta-v1/its-urgent-poc.apk) for testing.
 - This public repo is clone of my private repo which contains all the firebase files, secrets & apis.
 - This is a public repo, it does not contain any firebase functionlity. 
 - You need to add firebase project by following [these](#prerequisites) simple instructions which only requires some clicks, copy & paste.
