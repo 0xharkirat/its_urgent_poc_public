@@ -40,16 +40,17 @@ This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.
 /ios/Runner/GoogleService-Info.plist
 lib/firebase_options.dart
 ```
+10. Now move to Firebase section to add Firebase in your project.
 
-### Firebase:
+### Add Firebase:
 - Follow [these steps](https://firebase.google.com/docs/flutter/setup?platform=web) to add Firebase to this project.
 - or, watch this [YouTube Video](https://www.youtube.com/watch?v=FkFvQ0SaT1I&t).
 
-### Firebase Authentication:
+### Setup Firebase Authentication:
 - Go to Firebase [console](https://console.firebase.google.com/) -> Click on your Project which you added to this flutter app.
 - On the left side menu, click `Build` -> `Authentication` -> `Get Started` -> `Sign-in method` tab -> `Anonymous` -> `Enable` (switch on) -> `Save`.
 
-### Firebase Cloud Firestore:
+### Setup Firebase Cloud Firestore:
 - On the left side menu, click `Build` -> `Firestore Database` -> `Create Database` -> `Next` & `Create` (With default options).
 - Once created, Select `Rules tab` -> Paste these rules:
 ```javascript
@@ -66,7 +67,7 @@ service cloud.firestore {
 - `Publish`.
 
 
-### Firebase Cloud Messaging (FCM):
+### Setup Firebase Cloud Messaging (FCM):
 - Click on Settings Icons next to `Project Overview` in the left side menu.
 - Click on `Project Settings` -> `Cloud Messaging tab`.
 - Click on `⋮` (three dots) next to `Cloud Messaging API (Legacy) Disabled`.
