@@ -142,3 +142,13 @@ service cloud.firestore {
 - It is currently using Cloud Messaging API (Legacy) for sending notifications, which is deprecated, I will use Firebase Cloud Messaging API (V1) which is recommended in the full project during my GSoC period.
 - It does not uses any other backend server, cloud functions to handle complex logics such as checking for dnd mode, notifying the sender about challenges etc. as required & mentioned in project page. All functionality will be implemented using Firebase cloud functions, which will also act as security layer for cloud firestore db.
 - Currently Phone numbers are stored as plain numbers, I will implement functionality to store phone number data in encrypted mode using cloud functions.
+- Flutter/Dart plugins used:
+   - firebase_core
+   - firebase_auth
+   - provider
+   - cloud_firestore
+   - flutter_contacts
+   - transparent_image
+   - app_settings
+   - firebase_messaging
+   - http
