@@ -5,16 +5,20 @@
 Please open issues if anything goes wrong, I am happy to assist & resolve.
 <br>
 
-This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent) for GSoC'24. 
-- Watch the working Demo Video here: https://youtu.be/__nhs4On2zI (1.5x speed recommended).
-- Download this Android [.apk](https://github.com/0xharkirat/its_urgent_poc_public/releases/download/beta-v1/its-urgent-poc.apk) for testing.
-- This public repo is clone of my private repo which contains all the firebase files, secrets & apis.
-- This is a public repo, it does not contain any firebase functionlity. 
-- You need to add firebase project by following [these](#prerequisites) simple instructions which only requires some clicks, copy & paste.
-- For more important notes regarding this poc, see this [section](#some-important-notes).
-- You can also learn from these codelabs
-   - [Firebase FCM Flutter](https://firebase.google.com/codelabs/firebase-fcm-flutter#0)
-   - [Get to know Firebase for Flutter](https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0)
+### This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.org/public/gsoc/2024/itsurgent) for GSoC'24. 
+
+- Working Demo & Apk (does not require any setup):
+   - Watch the working Demo Video here: https://youtu.be/__nhs4On2zI (1.5x speed recommended).
+   - Download this Android [.apk](https://github.com/0xharkirat/its_urgent_poc_public/releases/download/beta-v1/its-urgent-poc.apk) for testing (You need to `allow installation from unknown source` when installing the app).
+
+- Running the App Using Flutter on your machine/device (Setup required):
+   - This public repo is clone of my private repo which contains all the firebase files, secrets & apis.
+   - This is a public repo, it does not contain any firebase functionlity. 
+   - You need to add firebase project by following [these](#prerequisites) simple instructions which only requires some clicks, copy & paste.
+   - For more important notes regarding this poc, see this [section](#some-important-notes).
+   - You can also learn from these codelabs
+      - [Firebase FCM Flutter](https://firebase.google.com/codelabs/firebase-fcm-flutter#0)
+      - [Get to know Firebase for Flutter](https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0)
 
 
 ## Steps to add your Firebase project in this project.
@@ -26,7 +30,7 @@ This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.
 5. Install all plugins using: `flutter pub get` in the root folder of the project.
 6. For iOS only (Important for getting firebase notifications):
    - If you are only using `com.example.<appName>` as bundle identifier, Firebase notifications will not work. So follow these steps before adding firebase to your app.
-   - Right click on iOS folder -> Open in Xcode -> Runner -> Signing & Capabilities -> Enter some unique Bundle Identifier (like com.<your_unique_name>.<unique_appName> & press enter to check availability.
+   - Right click on iOS folder -> Open in Xcode -> Runner -> Signing & Capabilities -> Enter some unique Bundle Identifier (like com.<your_unique_name>.<unique_appName> & press enter to check availability. <img width="788" alt="Screenshot 2024-03-18 at 5 18 16 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/0c36e067-298e-466d-804d-58dfcf5b79d9">
    - Then again in VSCode or your editor go to ios/Runner/Info.plist.
    - Change the CFBundleIdentifier to your own unique identifier like I did:
    - <img width="463" alt="Screenshot 2024-03-18 at 4 55 53 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b8a2db93-ee05-41aa-aa75-8df2111b83e6">
@@ -129,8 +133,9 @@ service cloud.firestore {
 - iOS simulators have problem showing notifications from Firebase, use physical iOS devices instead.
 
 #### Some Important notes:
-- This project uses Kotlin 1.8.0, which is required for app_settings plugin.
-`id "org.jetbrains.kotlin.android" version "1.8.0" apply false` in your android/settings.gradle 
+- This project uses Kotlin 1.8.0, which is required for [app_settings](https://pub.dev/packages/app_settings) plugin.
+   - In your android/settings.gradle 
+   `id "org.jetbrains.kotlin.android" version "1.8.0" apply false` 
 - In this poc, Notifications only shows when app is in the background mode.
 - For the foreground mode, it requires extra functionality which I will implement using the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) or [awesome_notifications](https://pub.dev/packages/awesome_notifications) package during my GSoC period.
 - It also does not check for device's DND mode. Full functionality during GSoC period.
