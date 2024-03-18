@@ -25,15 +25,16 @@ This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.
 4. Open in the Terminal/Android Studio/VS Code.
 5. Install all plugins using: `flutter pub get` in the root folder of the project.
 6. For iOS only (Important for getting firebase notifications):
+   - If you are only using `com.example.<appName>` as bundle identifier, Firebase notifications will not work. So follow these steps before adding firebase to your app.
    - Right click on iOS folder -> Open in Xcode -> Runner -> Signing & Capabilities -> Enter some unique Bundle Identifier (like com.<your_unique_name>.<unique_appName> & press enter to check availability.
    - Then again in VSCode or your editor go to ios/Runner/Info.plist.
    - Change the CFBundleIdentifier to your own unique identifier like I did:
    - <img width="463" alt="Screenshot 2024-03-18 at 4 55 53 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b8a2db93-ee05-41aa-aa75-8df2111b83e6">
 
    
-7. Go to https://console.firebase.google.com/ to create a Firebase account.
-8. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
-9. Also remove these lines from .gitignore file at the root folder of your project. Thesse lines were added by me to prevent git to track my firebase files:
+8. Go to https://console.firebase.google.com/ to create a Firebase account.
+9. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
+10. Also remove these lines from .gitignore file at the root folder of your project. Thesse lines were added by me to prevent git to track my firebase files:
 ```
 /android/app/google-services.json
 /ios/firebase_app_id_file.json
