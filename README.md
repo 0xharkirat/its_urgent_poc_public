@@ -31,9 +31,15 @@ This is a Proof of Concept (POC) for  [It's Urgent Project](https://ccextractor.
    - <img width="463" alt="Screenshot 2024-03-18 at 4 55 53 am" src="https://github.com/0xharkirat/its_urgent_poc_public/assets/65155920/b8a2db93-ee05-41aa-aa75-8df2111b83e6">
 
    
-8. Go to https://console.firebase.google.com/ to create a Firebase account.
-9. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
-10. 
+7. Go to https://console.firebase.google.com/ to create a Firebase account.
+8. If you haven't already, install the [Firebase CLI](https://firebase.google.com/docs/cli#setup_update_cli) (Use npm: recommended).
+9. Also remove these lines from .gitignore file at the root folder of your project. Thesse lines were added by me to prevent git to track my firebase files:
+```
+/android/app/google-services.json
+/ios/firebase_app_id_file.json
+/ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
+```
 
 ### Firebase:
 - Follow [these steps](https://firebase.google.com/docs/flutter/setup?platform=web) to add Firebase to this project.
